@@ -1,0 +1,22 @@
+{
+   "src_dir"            :   "/Users/tree/Desktop/blogs/min_photos",
+   "access_key"         :   "MtWuto_ZHh74J5Jpbqf8CX0-4KGLiQyEtdYvKTQL",
+   "secret_key"         :   "T2-00uypxT9Ux2OJHmHBl2kycj3YxAjouZ6sr7Rf",
+   "bucket"             :   "ccbb",
+   "file_list"          :   "<FileList>",
+   "zone"               :   "<Zone>",
+   "ignore_dir"         :   false,
+   "key_prefix"         :   "min_photos/",
+   "up_host"            :   "http://up.qiniu.com",
+   "overwrite"          :   false,
+   "check_exists"       :   false,
+   "check_hash"         :   true,
+   "check_size"         :   false,
+   "skip_file_prefixes" :   ".git,bin",
+   "skip_path_prefixes" :   "hello/,temp/",
+   "skip_fixed_strings" :   ".svn,qshell,public,temp,scaffolds,source,themes,node_modules,__pycache__",
+   "skip_suffixes"      :   ".DS_Store,.exe,.py,.json,.yml,.idea,.md,.sh,.git,.gitignore",
+   "rescan_local"       :   true,
+   "log_file"           :   "upload.log",
+   "log_level"          :   "info"
+}

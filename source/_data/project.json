@@ -1,0 +1,20 @@
+{
+	"Project2": {
+		"title": "天猫首页临摹",
+		"data": "2016-03",
+		"img_link": "/img/TM.png",
+		"use": ["html5", "css3", "JavaScript", "jQuery"],
+		"subTitle": "",
+		"direction": "天猫首页临摹",
+		"link": "https://w-nba.coding.me/TM"
+	},
+	"Project1": {
+		"title": "网页游戏 - 英雄难过棍子关",
+		"data": "2015-11",
+		"img_link": "/img/gunzi.png",
+		"use": ["html5", "css3", "JavaScript"],
+		"subTitle": "",
+		"direction": "使用网页Html5与css3等制作的一个简单二维小游戏",
+		"link": "https://w-nba.coding.me/game1"
+	}
+}
