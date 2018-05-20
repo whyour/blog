@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 老人催
-subtitle: 时光只解催人老，不信多情。
-description: 
-author: hunter
+title: 渔钓于一壑
+subtitle: 渔钓于一壑，则万物不奸其志；栖迟于一丘，则天下不易其乐。
+description: 渔钓于一壑，则万物不奸其志；栖迟于一丘，则天下不易其乐。
+author: whyour
 email: wangpengwnba@126.com
 keywords: "前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验"
 
@@ -85,7 +85,8 @@ disqus_shortname:
 #  - hexo-generator-baidu-sitemap
 #  - hexo-generator-sitemap
 
-theme: indyou
+#theme: indyou
+theme: yilia
 exclude_generator:
 
 # Deployment
