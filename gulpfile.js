@@ -16,6 +16,17 @@ gulp.task('minify-css', function() {
         .pipe(gulp.dest('./public'));
 });
 
+gulp.task('minify-html', function () {
+    return gulp.src('./public/**/*.html')
+        .pipe(htmlclean())
+        .pipe(htmlmin({
+            removeComments: true,
+            minifyJS: true,
+            minifyCSS: true,
+            minifyURLs: true,
+        }))
+        .pipe(gulp.dest('./public'))
+});
 
 // 压缩图片任务
 // 在命令行输入 gulp images 启动此任务
@@ -56,5 +67,5 @@ gulp.task('minify-js', function() {
 
 // 执行 gulp 命令时执行的任务
 gulp.task('default', [
-    'minify-css','minify-js','copy1','copy2'
+    'minify-css','minify-js','minify-html','copy1','copy2'
 ]);

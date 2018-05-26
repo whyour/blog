@@ -21,6 +21,7 @@ const ignoreCache = [
     /https?:\/\/changyan.sohu.com\//,
     /https?:\/\/\*.cdn.sohucs.com\//,
     /http?:\/\/p6pqytu6y.bkt.clouddn.com\//,
+    /https?:\/\/api.ninesix.cc\//,
     /https?:\/\/p6pqytu6y.bkt.clouddn.com\//,    
 ];
 
@@ -55,7 +56,9 @@ function shouldAlwaysFetch(request) {
 
 // 缓存 html 页面
 function shouldFetchAndCache(request) {
-    return (/text\/html/i).test(request.headers.get('Accept'));
+    return (/text\/html/i).test(request.headers.get('Accept')) ||
+    (/text\/css/i).test(request.headers.get('Accept')) ||
+    (/image\/apng/i).test(request.headers.get('Accept'));
 }
 
 // 发送 Notification 通知
