@@ -103,7 +103,7 @@ skip_render:
 
 deploy:
   type: rsync
-  host: 23.105.205.19
+  host: 23.83.242.217
   user: root
   root: /usr/share/nginx/ninesix.cc
   port: 26305

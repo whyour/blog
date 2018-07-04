@@ -6,7 +6,8 @@
     "version": "3.7.1"
   },
   "scripts": {
-    "d": "hexo clean && hexo g && gulp && hexo d",
+    "dc": "hexo clean && hexo g && gulp && hexo d",
+    "d": "hexo clean && hexo g && gulp no-cp && hexo d",
     "local": "hexo clean && hexo g && hexo s"
   },
   "dependencies": {
