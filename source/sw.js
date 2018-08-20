@@ -8,22 +8,24 @@ const offlineResources = [
 ];
 
 const ignoreCache = [
-    /https?:\/\/hm.baidu.com\//,
-    /https?:\/\/cdn.bootcss.com\//,
-    /https?:\/\/static.duoshuo.com\//,
-    /https?:\/\/www.google-analytics.com\//,
-    /https?:\/\/dn-lbstatics.qbox.me\//,
-    /https?:\/\/ajax.cloudflare.com\//,
-    /https?:\/\/cdn1.lncld.net\//,
-    /https?:\/\/api.leancloud.cn\//,
-    /https?:\/\/busuanzi.ibruce.info\//,
-    /https?:\/\/changyan.itc.cn\//,
-    /https?:\/\/changyan.sohu.com\//,
-    /https?:\/\/\*.cdn.sohucs.com\//,
-    /http?:\/\/p6pqytu6y.bkt.clouddn.com\//,
-    /https?:\/\/api.ninesix.cc\//,
-    /https?:\/\/p6pqytu6y.bkt.clouddn.com\//,    
-    /https?:\/\/ninesix.cc\/isso\//
+    /hm.baidu.com/,
+    /cdn.bootcss.com/,
+    /static.duoshuo.com/,
+    /www.google-analytics.com/,
+    /dn-lbstatics.qbox.me/,
+    /ajax.cloudflare.com/,
+    /cdn1.lncld.net/,
+    /api.leancloud.cn/,
+    /busuanzi.ibruce.info/,
+    /changyan.itc.cn/,
+    /changyan.sohu.com/,
+    /\*.cdn.sohucs.com/,
+    /p6pqytu6y.bkt.clouddn.com/,
+    /api.ninesix.cc/,
+    /p6pqytu6y.bkt.clouddn.com/,    
+    /ninesix.cc\/isso\//,
+    /disqus.com/,
+    /disqus.ninesix.cc/,
 ];
 
 // 慎重使用全局可变变量，因为 serviceWork 不可控的停止和重启，会导致它们的取值在后续读取时无法预测
