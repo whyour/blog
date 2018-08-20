@@ -23,6 +23,7 @@ const ignoreCache = [
     /http?:\/\/p6pqytu6y.bkt.clouddn.com\//,
     /https?:\/\/api.ninesix.cc\//,
     /https?:\/\/p6pqytu6y.bkt.clouddn.com\//,    
+    /https?:\/\/ninesix.cc\/isso\//
 ];
 
 // 慎重使用全局可变变量，因为 serviceWork 不可控的停止和重启，会导致它们的取值在后续读取时无法预测

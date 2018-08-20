@@ -100,6 +100,7 @@ skip_render:
   - README.md
   - sw.js
   - manifest.json  
+  - isso/js/embed.min.js
 
 deploy:
   type: rsync
