@@ -1,11 +1,10 @@
 ---
-title: js-shorthand
+title: javascript中的es6与简写技巧
 date: 2018-08-23 15:18:27
 tags: [javascript, es6]
 ---
-#
 
-## 1. 初级篇
+那些更简洁，更优雅的代码
 
 ### 1.1 三目运算符
 
@@ -114,8 +113,6 @@ let html = '<li class="comment-item" data-id="' + post.id + '" data-name="'+ pos
 </li>
 `
 ```
-
-## 2. 高级篇
 
 ### 2.1 变量赋值
 
