@@ -1,16 +1,12 @@
 ---
-title: angular路由守卫
+title: 使用Guard和Resolve进行验证和权限控制
 date: 2018-07-29 23:23:35
 tags: [angular, router, guard]
 ---
 
-使用Guard和Resolve进行验证和权限控制
-======================================
-
 Angular2提供了2种组件，`Guard`和`Resolve`。`Guard`顾名思义就是用来保护一个路径。可以用来判断用户只有在满足一定的条件的情况下才能打开这个路径对应的页面。`Resolve`用来在进入某个路径之前先获取数据。
 
 ## Guard
------------------------
 
 `Guard`其实是一系列接口，只要你实现了它的方法，配置了这些`Guard`，Angular路由框架就会根据这个方法返回的`true`或`false`来判断是否激活这个路由。它包括几种类型：
 
@@ -37,14 +33,12 @@ export interface CanActivate {
 这个接口定义了一个方法，当你实现这个接口，并把它配置到某一个路由上以后，当用户进入这个路由的路径之前，就会调用它里面的`canActivate()`方法，它第一个参数，就是将要激活的路由，第二个参数是路由器当前的状态。它返回一个布尔型的结果，或者是布尔型的`Promise`或`Observable`。
 
 ## Resolve
------------------------------
 
 这跟Angular1中ui-router库的`resolve`类似，就是用来在打开一个页面之前先获取数据，而不是进入页面以后再加载。这个接口中的方法，可以返回任意的对象，也可以返回一个`Promise`，或者`Observable`
 
 如果在一个路径上同时设置了`CanActivate`和`Resolve`，首先`CanActivate`接口的方法会被执行，当这个路由可以被激活时，`Resolve`接口的方法才会被执行。
 
 ## 实例
---------------
 
 下面，我们来通过一个比较完整的实例，来看看，`CanActivate`，`CanActivateChild`，`CanDeactivate`和`Resolve`的用法。
 
@@ -229,6 +223,7 @@ export class MyTodoGuard implements CanActivateChild {
 ### 离开详情页需要确认
 
 接下来我们看怎么实现离开详情页时的确认，也很简单，就是使用`CanDeactivate`，并把它定义在详情页的路由定义上。  
+
 ```typescript
 
 @Injectable()

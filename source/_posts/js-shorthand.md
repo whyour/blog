@@ -6,7 +6,7 @@ tags: [javascript, es6]
 
 那些更简洁，更优雅的代码
 
-### 1.1 三目运算符
+### 三目运算符
 
 下面是一个很好的例子，将一个完整的 if 语句，简写为一行代码。
 
@@ -25,7 +25,7 @@ else {
 
 > const result = a > 10 ? 'greater than 10' : 'less than 10';
 
-### 1.2 循环语句
+### 循环语句
 
 当使用纯 JavaScript（不依赖外部库，如 jQuery 或 lodash）时，下面的简写会非常有用。
 
@@ -35,7 +35,7 @@ else {
 
 > for (let index of list)
 
-### 1.3 声明变量
+### 声明变量
 
 在函数开始之前，对变量进行赋值是一种很好的习惯。在申明多个变量时：
 
@@ -45,7 +45,7 @@ else {
 
 > let x, y, z=3;
 
-### 1.4 if 语句
+### if 语句
 
 在使用 if 进行基本判断时，可以省略赋值运算符。
 
@@ -55,7 +55,7 @@ else {
 
 > `if (likeJavaScript)`
 
-### 1.5 十进制数
+### 十进制数
 
 可以使用科学计数法来代替较大的数据，如可以将 10000000 简写为 1e7。
 
@@ -65,7 +65,7 @@ else {
 
 > `for (let i = 0; i < 1e7; i++) { }`
 
-### 1.6 多行字符串
+### 多行字符串
 
 如果需要在代码中编写多行字符串，就像下面这样：
 
@@ -114,7 +114,7 @@ let html = '<li class="comment-item" data-id="' + post.id + '" data-name="'+ pos
 `
 ```
 
-### 2.1 变量赋值
+### 变量赋值
 
 当将一个变量的值赋给另一个变量时，首先需要确保原值不是 null、未定义的或空值。
 
@@ -130,14 +130,14 @@ if (v1 !== null || v1 !== undefined || v1 !== '') {
 
 > `const v2 = v1 || 'other';`
 
-### 2.2 默认值赋值
+### 默认值赋值
 
 如果预期参数是 null 或未定义，则不需要写六行代码来分配默认值。我们可以只使用一个简短的逻辑运算符，只用一行代码就能完成相同的操作，同变量赋值。
 
 简写为：
 > `const dbHost = process.env.HOST || 'localhost';`
 
-### 2.3 对象属性
+### 对象属性
 
 ES6 提供了一个很简单的办法，来分配属性的对象。如果属性名与 key 名相同，则可以使用简写。
 
@@ -147,7 +147,7 @@ ES6 提供了一个很简单的办法，来分配属性的对象。如果属性�
 
 > `const obj = { x, y };`
 
-### 2.4 箭头函数
+### 箭头函数
 
 经典函数很容易读写，但是如果把它们嵌套在其它函数中进行调用时，整个函数就会变得有些冗长和混乱。这时候可以使用箭头函数来简写：
 
@@ -163,7 +163,7 @@ setTimeOut(function() {
 setTimeOut(() => console.log('yes'), 0);
 ```
 
-### 2.5 隐式返回值
+### 隐式返回值
 
 返回值是我们通常用来返回函数最终结果的关键字。只有一个语句的箭头函数，可以隐式返回结果（函数必须省略括号（{ }），以便省略返回关键字）。
 
@@ -181,7 +181,7 @@ function square(a){
 square = a => a*a;
 ```
 
-### 2. 6 默认参数值
+### 默认参数值
 
 可以使用 if 语句来定义函数参数的默认值。ES6 中规定了可以在函数声明中定义默认值。
 
@@ -203,9 +203,9 @@ function volume(l, w ,h) {
 volume = (l, w = 1, h = 2) => l * w * h;
 ```
 
-### 2.7 解构赋值
+### 解构赋值
 
-#### 2.7.1 交换变量的值
+#### 交换变量的值
 
 ```javascript
 let x = 1;
@@ -214,7 +214,7 @@ let y = 2;
 [x, y] = [y, x];
 ```
 
-#### 2.7.2 函数返回多个值
+#### 函数返回多个值
 
 ```javascript
 // 返回一个数组
@@ -234,7 +234,7 @@ function example() {
 let { foo, bar } = example();
 ```
 
-#### 2.7.3 函数参数的定义
+#### 函数参数的定义
 
 ```javascript
 // 参数是一组有次序的值
@@ -246,7 +246,7 @@ function f({x, y, z}) { ... }
 f({z: 3, y: 2, x: 1});
 ```
 
-#### 2.7.4 提取json数据
+#### 提取json数据
 
 ```javascript
 let jsonData = {
@@ -261,7 +261,7 @@ console.log(id, status, number);
 // 42, "OK", [867, 5309]
 ```
 
-#### 2.7.5 函数参数的默认值
+#### 函数参数的默认值
 
 ```javascript
 jQuery.ajax = function (url, {
@@ -277,7 +277,7 @@ jQuery.ajax = function (url, {
 };
 ```
 
-#### 2.7.6 遍历 Map 结构
+#### 遍历 Map 结构
 
 ```javascript
 const map = new Map();
@@ -291,13 +291,13 @@ for (let [key, value] of map) {
 // second is world
 ```
 
-#### 2.7.7 加载模块指定方法
+#### 加载模块指定方法
 
 ```javascript
 const { Store, Action } = require("ngx-tethys");
 ```
 
-#### 2.8 展开运算符
+#### 展开运算符
 
 展开运算符是在 ES6 中引入的，使用展开运算符能够让 JavaScript 代码更加有效和有趣。
 
@@ -334,7 +334,7 @@ console.log(b) // 2
 console.log(z) // { c: 3, d: 4 }
 ```
 
-### 2.9 Array.find
+### Array.find
 
 如果你曾经编写过普通 JavaScript 中的 find 函数，那么你可能使用了 for 循环。在 ES6 中，介绍了一种名为 find（）的新数组函数，可以实现 for 循环的简写。
 
@@ -359,13 +359,13 @@ function findDog(name) {
 const pet = pets.find(pet => pet.type === 'dog' && pet.name === 'Tom');
 ```
 
-### 2.10 Object [key]
+### Object [key]
 
 虽然将 foo.bar 写成 foo ['bar'] 是一种常见的做法，但是这种做法构成了编写可重用代码的基础。
 
 > key可接受一个变量;
 
-### 2.11 双位操作符
+### 双位操作符
 
 位操作符是 JavaScript 初级教程的基本知识点，但是我们却不常使用位操作符。因为在不处理二进制的情况下，没有人愿意使用 1 和 0。
 
@@ -377,6 +377,6 @@ const pet = pets.find(pet => pet.type === 'dog' && pet.name === 'Tom');
 
 > `~~4.9 === 4 //true`
 
-## **总结**
+### **总结**
 
 上述是一些常用的 JavaScript 简写技巧，如果有其它未提及的简写技巧，也欢迎大家补充。
