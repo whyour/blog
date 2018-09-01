@@ -3,7 +3,6 @@ title: 使用Guard和Resolve进行验证和权限控制
 date: 2018-07-29 23:23:35
 tags: [angular, router, guard]
 ---
-test
 Angular2提供了2种组件，`Guard`和`Resolve`。`Guard`顾名思义就是用来保护一个路径。可以用来判断用户只有在满足一定的条件的情况下才能打开这个路径对应的页面。`Resolve`用来在进入某个路径之前先获取数据。
 
 ## Guard
