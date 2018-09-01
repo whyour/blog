@@ -7,6 +7,7 @@
   },
   "scripts": {
     "dc": "hexo clean && hexo g && gulp && hexo d",
+    "hook": "hexo clean && hexo g && gulp",
     "d": "hexo clean && hexo g && gulp no-cp && hexo d",
     "local": "hexo clean && hexo g && hexo s"
   },
