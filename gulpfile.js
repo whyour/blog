@@ -47,7 +47,3 @@ gulp.task('default', [
 gulp.task('no-cp', [
     'minify-js','minify-html'
 ]);
-
-gulp.task('no-cpb', [
-    'minify-js','minify-html'
-]);
