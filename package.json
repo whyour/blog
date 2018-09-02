@@ -30,7 +30,7 @@
     "hexo-helper-qrcode": "^1.0.2",
     "hexo-renderer-ejs": "^0.2.0",
     "hexo-renderer-less": "^0.2.0",
-    "hexo-renderer-markdown-it": "^3.4.1",
+    "hexo-renderer-markdown-it": "git://git@github.com:whyour/hexo-renderer-markdown-it.git",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.2",
     "hexo-util": "^0.6.3",
