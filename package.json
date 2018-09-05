@@ -47,7 +47,8 @@
     "markdown-it-mark": "^2.0.0",
     "markdown-it-regexp": "^0.4.0",
     "markdown-it-sub": "^1.0.0",
-    "markdown-it-sup": "^1.0.0"
+    "markdown-it-sup": "^1.0.0",
+    "sw-toolbox": "^3.6.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

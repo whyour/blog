@@ -14,7 +14,7 @@ keywords: "前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极�
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: //ninesix.cc
 root: /
-permalink: :year/:month/:day/:title/
+permalink: post/:title.html
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
@@ -99,6 +99,8 @@ exclude_generator:
 skip_render:
   - README.md
   - sw.js
+  - sw.bak.js
+  - sw-toolbox.js
   - manifest.json  
   - isso/js/embed.min.js
 
