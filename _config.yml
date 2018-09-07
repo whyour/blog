@@ -103,6 +103,7 @@ skip_render:
   - sw-toolbox.js
   - manifest.json  
   - isso/js/embed.min.js
+  - sitemap.xml
 
 deploy:
   type: rsync
