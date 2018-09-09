@@ -206,3 +206,5 @@ export class SettingsComponent implements OnInit {
   }
 }
 ```
+
+<!-- * [github源码](https://github.com/whyour/angular-route-demo.git) -->
