@@ -1,5 +1,5 @@
 ---
-title: angular-router
+title: angular6路由基础
 date: 2018-09-09 21:10:47
 tags: [angular, router]
 ---
