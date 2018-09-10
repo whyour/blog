@@ -14,7 +14,7 @@ layout: false
 			margin: 0;
 			padding: 0;
 			outline: none;
-			font-family: \5FAE\8F6F\96C5\9ED1, 宋体;
+			font-family: "sofia-pro", sans-serif;
 			-webkit-user-select: none;
 			-moz-user-select: none;
 			-ms-user-select: none;
@@ -46,17 +46,14 @@ layout: false
 			position: absolute;
 			top: 0;
 			left: 0;
-			background: #000;
-			opacity: 0.6;
-			filter: alpha(opacity=60);
+			background: #f1f1f1;
+			opacity: 0.2;
+			filter: alpha(opacity=20);
 		}
 		.b {
-			width: 100%;
-			text-align: center;
-			height: 400px;
 			position: absolute;
-			top: 50%;
-			margin-top: -230px
+			bottom: 0%;
+			right: 0;
 		}
 		.a {
 			width: 150px;
@@ -73,16 +70,15 @@ layout: false
 			line-height: 50px;
 			font-size: 18px;
 			border-radius: 25px;
-			color: #333
+			color: #333;
 		}
 		.a a:hover {
 			color: #000;
 			box-shadow: #fff 0 0 20px
 		}
 		p {
-			color: #fff;
-			margin-top: 40px;
-			font-size: 24px;
+			color: #000;
+			font-size: 16px;
 		}
 		#num {
 			margin: 0 5px;
@@ -105,14 +101,11 @@ layout: false
 
 <body onLoad="redirect();">
 	<div class="whole">
-		<img src="http://7xowaa.com1.z0.glb.clouddn.com/back.jpg" />
+		<img src="/img/cry.jpg" />
 		<div class="mask"></div>
 	</div>
 	<div class="b">
-		<img src="/img/earth.gif" class="center" />
 		<p>
-			暂时未能找到您查找的页面<br>
-			可能输入的网址错误或此页面不存在<br>
 			<span id="num"></span>秒后自动跳转到主页
 		</p>
 	</div>
