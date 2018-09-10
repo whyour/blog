@@ -157,21 +157,17 @@ const routes: Routes = [
   providedIn: 'root'
 })
 export class Preloader implements Resolve<any> {
-  constructor(private afs: AngularFirestore, private router: Router) {}
+  constructor() {}
 
   resolve(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<any> {
     const name = next.paramMap.get('id');
-    return http.get(id).pipe(
-      tap(data => {
-        if (!data) {
-          alert('Data not found!');
-          this.router.navigate(['home']);
-        }
-      })
-    );
+    return new Observable((observer) => {
+      observer.next(animal);
+      observer.complete();
+    });
   }
 }
 ```
@@ -202,9 +198,11 @@ export class SettingsComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.data$ = this.route.data;
+    this.data$ = this.route.data.pipe(
+      map(val => val[0])
+    );
   }
 }
 ```
 
-<!-- * [github源码](https://github.com/whyour/angular-route-demo.git) -->
+* [github源码](https://github.com/whyour/angular-route-demo.git)
