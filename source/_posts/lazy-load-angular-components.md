@@ -1,5 +1,5 @@
 ---
-title: lazy-load-angular-components
+title: angular6懒加载组件
 date: 2018-09-15 20:11:03
 tags: [angular, route, components, lazy-load]
 ---
