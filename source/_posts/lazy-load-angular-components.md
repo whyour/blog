@@ -89,7 +89,7 @@ export class AppRoutingModule { }
 
 ### 验证延迟加载是否正常工作
 
-在chrome中，打开开发人员工具，然后单击网络选项卡。当您导航到惰性URL时，可以看到`0.chunk.js`。加载需要`2ms`。
+在chrome中，打开开发人员工具，然后单击网络选项卡。当您导航到惰性URL时，可以看到`lazy-module.js`。加载需要`2ms`。
 
 ![lazy-load](https://github.com/whyour/graph-bed/raw/master/image.png)
 
