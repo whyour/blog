@@ -10,7 +10,7 @@ const offlineResources = [
     /cdn.bootcss.com/,
     /static.duoshuo.com/,
     /www.google-analytics.com/,
-    /dn-lbstatics.qbox.me/,
+    /busuanzi.ibruce.info/,
     /ajax.cloudflare.com/,
     /cdn1.lncld.net/,
     /api.leancloud.cn/,
