@@ -7,11 +7,11 @@ tags: ['javascript','es6']
 
 ```typescript
 
-const foo    = { name: 'tom',   age: 30, nervous: false };
-const bar    = { name: 'dick',  age: 40, nervous: false };
-const baz    = { name: 'harry', age: 50, nervous: true };
+const foo = { name: 'tom',   age: 30, nervous: false };
+const bar = { name: 'dick',  age: 40, nervous: false };
+const baz = { name: 'harry', age: 50, nervous: true };
 
-
+<!-- more -->
 'Bad Code 💩'
 
 console.log(foo);
