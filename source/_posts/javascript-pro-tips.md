@@ -3,15 +3,20 @@ title: javascript中的es6技巧
 date: 2018-11-11 20:41:31
 tags: ['javascript','es6']
 ---
+
+如何优雅地写代码，增加代码的可阅读性。JavaScript Pro Tips！
+
+<!-- more -->
+
 ### how to use console.log
 
 ```typescript
 
-const foo = { name: 'tom',   age: 30, nervous: false };
-const bar = { name: 'dick',  age: 40, nervous: false };
+const foo = { name: 'tom', age: 30, nervous: false };
+const bar = { name: 'dick', age: 40, nervous: false };
 const baz = { name: 'harry', age: 50, nervous: true };
 
-<!-- more -->
+
 'Bad Code 💩'
 
 console.log(foo);
