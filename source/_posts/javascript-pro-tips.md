@@ -8,6 +8,8 @@ tags: ['javascript','es6']
 
 ### how to use console.log
 
+<!-- more -->
+
 ```typescript
 
 const foo = { name: 'tom', age: 30, nervous: false };
