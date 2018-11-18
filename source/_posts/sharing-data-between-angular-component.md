@@ -9,6 +9,8 @@ tags: [angular, component, angular6]
 
 父组件向子组件传递数据的时候，可以使用在子组件中使用`Input Decorator`，这样在父组件中就可以通过模板传递给子组件。
 
+<!-- more -->
+
 ```typescript
 // parent.component.ts
 
