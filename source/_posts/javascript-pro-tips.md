@@ -6,8 +6,6 @@ tags: ['javascript','es6']
 
 如何优雅地写代码，增加代码的可阅读性。JavaScript Pro Tips！
 
-<!-- more -->
-
 ### how to use console.log
 
 ```typescript
