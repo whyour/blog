@@ -21,7 +21,6 @@ npm install --save hexo-auto-excerpt
 第二种我们可以按照文章的行数截取，这就要求你在前面几行写出文章的概要。具体实现需要更改下`ejs`模板，本主题需要修改`layout/_partial/article.ejs`，在`div.article-entry`中添加如下代码:
 
 ```html
-
 <% if (index){ %>
     <% if (post.excerpt) { %>
         <%- post.excerpt %>
@@ -46,7 +45,6 @@ npm install --save hexo-auto-excerpt
 主题中的配置文件增加如下行：
 
 ```
-
 auto_excerpt:
     enable: true
     lines: 3
