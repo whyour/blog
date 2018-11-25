@@ -1,5 +1,5 @@
 ---
-title: typescript-types-vs-interfaces
+title: typescript中type和interface的区别
 date: 2018-11-25 22:40:03
 tags: [typescript, interface, type]
 ---
