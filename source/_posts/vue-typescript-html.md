@@ -1,10 +1,13 @@
 ---
-title: vue使用typescript和html开发
+title: 使用typescript和html开发vue
 date: 2018-12-02 23:49:37
 tags: [typescript, vue, html]
 ---
 
-本篇将介绍如何用typescript和html开发vue，因为博主在主要开发angular，对于js文件和模板写在一起感觉很臃肿，而且方法都需要逗号分隔，变量声明也不友好，所有翻山越岭，发现vue官方已经开发了对typescript的支持`[vue-class-component](https://github.com/vuejs/vue-class-component)`，还有对`@Prop`、`@Emit`、`@Inject`、`@Model`、`@Watch`等的支持的`[vue-property-decorator](https://github.com/kaorun343/vue-property-decorator)`，但是`@Component`不支持`templateUrl`，所以用到了`[vue-template-loader](https://github.com/ktsn/vue-template-loader)`。
+本篇将介绍如何用typescript和html开发vue，因为博主在主要开发angular，对于js文件和模板写在一起感觉很臃肿，而且方法都需要逗号分隔，变量声明也不友好。
+所有翻山越岭，发现vue官方已经开发了对typescript的支持`[vue-class-component](https://github.com/vuejs/vue-class-component)`，
+还有对`@Prop`、`@Emit`、`@Inject`、`@Model`、`@Watch`等的支持的`[vue-property-decorator](https://github.com/kaorun343/vue-property-decorator)`，
+但是`@Component`不支持`templateUrl`，所以用到了`[vue-template-loader](https://github.com/ktsn/vue-template-loader)`。
 
 ### 安装依赖
 
