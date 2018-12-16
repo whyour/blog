@@ -13,7 +13,7 @@ tags: [typescript, vue, html]
 
 ```bash
 npm i --save vue vue-class-component vue-property-decorator
-npm i --save-dev css-loader ts-loader typescript vue-loader vue-template-compiler                 vue-template-loader webpack webpack-cli
+npm i --save-dev css-loader ts-loader typescript vue-loader vue-template-compiler vue-template-loader webpack webpack-cli
 ```
 
 ### 创建tsconfig.json
