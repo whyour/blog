@@ -4,6 +4,7 @@ date: 2018-12-16 20:21:36
 tags: [css, animation]
 ---
 本文介绍css中的文本背景动画。
+<!-- more -->
 ### 创建html
 
 ```html
