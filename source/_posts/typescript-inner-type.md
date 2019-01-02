@@ -7,7 +7,7 @@ tags: [typescript]
 
 ### Partial
 
-Partial的作用是给某个类型中的属性加上?这个 modifier，也就是将必须的属性转为可选项。在本类型中首先要理解两个关键词：`in`、`keyof`。keyof可以取到一个对象接口的所有key值。
+Partial的作用是给某个类型中的属性加上?这个 modifier，也就是将必须的属性转为可选项。在本类型中首先要理解两个关键词：`in`、`keyof`。keyof可以取到一个对象接口的所有key值，返回一个String Literal Types，即字符串字面量类型。
 比如:
 ```typescript
 interface Person {
@@ -244,6 +244,16 @@ const obj = {
 }
 ```
 
+### NonNullable
+```typescript
+type NonNullable<T> = T extends null | undefined ? never : T;
+```
+这个类型可以用来过滤类型中的 null 及 undefined 类型。
+比如
+```typescript
+type T22 = '123' | '222' | null;
+type T23 = NonNullable<T22>; // '123' | '222'
+```
 ### reference
 [https://wanghx.cn/blog/github/issue13.html](https://wanghx.cn/blog/github/issue13.html)
 [https://zhuanlan.zhihu.com/p/40311981](https://zhuanlan.zhihu.com/p/40311981)
