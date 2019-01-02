@@ -74,7 +74,7 @@ const hunter: PartialPerson = {
   }
 } // error property age in child is missing
 ```
-如果要处理多层，就需要通过`[Conditional Types](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html)`实现更强大的Partial
+如果要处理多层，就需要通过[Conditional Types](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html)实现更强大的Partial
 
 ```typescript
 export type PowerPartial<T> = {
@@ -132,7 +132,7 @@ type Pick<T, K extends keyof T> = {
   [P in K]: T[P];
 };
 ```
-如果使用过`[lodash](https://lodash.com/docs/4.17.11)`，就知道这个类型是将子属性取出来，比如
+如果使用过[lodash](https://lodash.com/docs/4.17.11)，就知道这个类型是将子属性取出来，比如
 ```typescript
 type NewPerson = Pick<Person, 'name'>; // { name: string; }
 ```
@@ -230,16 +230,16 @@ interface Person {
 }
 
 const obj: ThisType<Person> = {
-  dosth() {
-    this.name // string
+  dosth(): string {
+    return this.name // string
   }
 }
 ```
 这样obj中的所有方法的上下文对象都成了Person这个类型，和下面差不多
 ```typescript
 const obj = {
-  dosth(this: Person) {
-    this.name // string
+  dosth(this: Person): string {
+    return this.name // string
   }
 }
 ```
