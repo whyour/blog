@@ -14,7 +14,7 @@ interface Person {
   name: string;
   age: number;
 }
-type T = keyof Person // "name" | "age"
+type T = keyof Person; // "name" | "age"
 ```
 而in可以遍历联合类型，比如
 ```typescript
@@ -57,12 +57,12 @@ interface PartialPerson {
 但是Partial有个局限性，只能处理第一层属性，比如
 ```typescript
 interface Person {
+  name: string;
+  age: number;
+  child: {
     name: string;
     age: number;
-    child: {
-      name: string;
-      age: number;
-    }
+  }
 }
 
 type PartialPerson = Partial<Person>;
@@ -92,12 +92,12 @@ type XOrY = T extends U ? X : Y;
 意思就是如果T是U的子类型，就返回X，否则返回Y，甚至可以多个组合
 ```typescript
 type TypeName<T> =
-    T extends string ? "string" :
-    T extends number ? "number" :
-    T extends boolean ? "boolean" :
-    T extends undefined ? "undefined" :
-    T extends Function ? "function" :
-    "object";
+  T extends string ? "string" :
+  T extends number ? "number" :
+  T extends boolean ? "boolean" :
+  T extends undefined ? "undefined" :
+  T extends Function ? "function" :
+  "object";
 
 type T0 = TypeName<string>;  // "string"
 type T1 = TypeName<"a">;  // "string"
@@ -129,7 +129,7 @@ type Mutable<T> = {
 ### Pick
 ```typescript
 type Pick<T, K extends keyof T> = {
-    [P in K]: T[P];
+  [P in K]: T[P];
 };
 ```
 如果使用过`[lodash](https://lodash.com/docs/4.17.11)`，就知道这个类型是将子属性取出来，比如
@@ -142,7 +142,7 @@ type NewPerson = Pick<Person, 'name'>; // { name: string; }
 将K中所有属性值转为T类型。
 ```typescript
 type Record<K extends keyof any, T> = {
-    [P in K]: T;
+  [P in K]: T;
 };
 ```
 比如
@@ -161,9 +161,9 @@ type T00 = Exclude<"a" | "b" | "c" | "d", "a" | "c" | "f">;  // "b" | "d"
 这个类型可以结合Pick来使用。当我们要继承某个接口，又需要修改某个属性的类型。比如
 ```typescript
 interface Chicken {
-    name: string;
-    age: number;
-    egg: number;
+  name: string;
+  age: number;
+  egg: number;
 }
 ```
 然后我们要继承上面的接口，但是我们的name不再是string而是number
@@ -207,6 +207,16 @@ function TestFn() {
 type T01 = ReturnType<typeof TestFn>; // number
 ```
 
+### Extract
+```typescript
+type Extract<T, U> = T extends U ? T : never;
+```
+结合实例
+```typescript
+type T = Extract<1 | 2, 1 | 3> // -> 1
+```
+可以得知，extract的作用是从T中提取U。
+
 ### ThisType
 
 ```typescript
@@ -215,8 +225,8 @@ interface ThisType<T> { }
 可以看到只声明了一个接口，其实这个类型的作用是指定上下文对象类型。
 ```typescript
 interface Person {
-    name: string;
-    age: number;
+  name: string;
+  age: number;
 }
 
 const obj: ThisType<Person> = {
