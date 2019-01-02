@@ -8,7 +8,7 @@ tags: [typescript]
 ### Partial
 
 Partial的作用是给某个类型中的属性加上?这个标识，也就是将必须的属性转为可选项。在本类型中首先要理解两个关键词：`in`、`keyof`。keyof可以取到一个对象接口的所有key值，返回一个String Literal Types，即字符串字面量类型。
-比如:
+比如：
 ```typescript
 interface Person {
   name: string;
@@ -16,14 +16,14 @@ interface Person {
 }
 type T = keyof Person; // "name" | "age"
 ```
-而in可以遍历联合类型，比如
+而in可以遍历联合类型，比如：
 ```typescript
 type Keys = "name" | "age";
 type Obj = {   // { name: any, age: any }
   [p in Keys]: any
 }  
 ```
-`keyof`产生联合类型，`in`遍历联合类型，来看下`Partial`源码
+然后看下`Partial`源码
 ```typescript
 // node_modules/typescript/lib/lib.es5.d.ts
 
@@ -54,7 +54,7 @@ interface PartialPerson {
   age?: number;
 }
 ```
-但是Partial有个局限性，只能处理第一层属性，比如
+但是Partial有个局限性，只能处理第一层属性，比如：
 ```typescript
 interface Person {
   name: string;
@@ -85,7 +85,7 @@ export type PowerPartial<T> = {
 ```
 
 ### Conditional Types
-`Conditional Types`是ts2.8引入的一个条件类型，比如
+`Conditional Types`是ts2.8引入的一个条件类型，比如：
 ```typescript
 type XOrY = T extends U ? X : Y;
 ```
@@ -113,13 +113,13 @@ type Required<T> = {
 }
 ```
 这个类型刚好和Partial相反，Partial是将所有属性改为不必须，Required是将所有属性改为必须。
-其中关键就是`-?`，它的作用就是移除`?`标识，还可以应用在readonly，比如
+其中关键就是`-?`，它的作用就是移除`?`标识，还可以应用在readonly，比如：
 ```typescript
 type Readonly<T> = {
   readonly [P in keyof T]: T[P];
 }
 ```
-Readonly是给属性添加`readonly`标识，如果改成`-readonly`就是移除属性的`readonly`标识。比如
+Readonly是给属性添加`readonly`标识，如果改成`-readonly`就是移除属性的`readonly`标识。比如：
 ```typescript
 type Mutable<T> = {
   -readonly [P in keyof T]: T[P]
@@ -132,7 +132,7 @@ type Pick<T, K extends keyof T> = {
   [P in K]: T[P];
 };
 ```
-如果使用过[lodash](https://lodash.com/docs/4.17.11)，就知道这个类型是将子属性取出来，比如
+如果使用过[lodash](https://lodash.com/docs/4.17.11)，就知道这个类型是将子属性取出来，比如：
 ```typescript
 type NewPerson = Pick<Person, 'name'>; // { name: string; }
 ```
@@ -145,7 +145,7 @@ type Record<K extends keyof any, T> = {
   [P in K]: T;
 };
 ```
-比如
+比如：
 ```typescript
 type T11 = Record<'a' | 'b' | 'c', Person>; // { a: Person; b: Person; c: Person; }
 ```
@@ -154,11 +154,11 @@ type T11 = Record<'a' | 'b' | 'c', Person>; // { a: Person; b: Person; c: Person
 ```typescript
 type Exclude<T, U> = T extends U ? never : T;
 ```
-顾名思义，就是把T中继承于U的类型移除，比如
+顾名思义，就是把T中继承于U的类型移除，比如：
 ```typescript
 type T00 = Exclude<"a" | "b" | "c" | "d", "a" | "c" | "f">;  // "b" | "d"
 ```
-这个类型可以结合Pick来使用。当我们要继承某个接口，又需要修改某个属性的类型。比如
+这个类型可以结合Pick来使用。当我们要继承某个接口，又需要修改某个属性的类型。比如：
 ```typescript
 interface Chicken {
   name: string;
@@ -198,7 +198,7 @@ type ReturnType<T> = T extends (
   ? R
   : any;
 ```
-这个类型是获取方法的返回类型，在`Conditional Types`中，我们可以用`infer`声明一个类型变量并对它进行使用。这里就是声明一个变量来承载返回值类型。比如
+这个类型是获取方法的返回类型，在`Conditional Types`中，我们可以用`infer`声明一个类型变量并对它进行使用。这里就是声明一个变量来承载返回值类型。比如：
 ```typescript
 function TestFn() {
   return 123;
@@ -249,7 +249,7 @@ const obj = {
 type NonNullable<T> = T extends null | undefined ? never : T;
 ```
 这个类型可以用来过滤类型中的 null 及 undefined 类型。
-比如
+比如：
 ```typescript
 type T22 = '123' | '222' | null;
 type T23 = NonNullable<T22>; // '123' | '222'
