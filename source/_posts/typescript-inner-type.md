@@ -81,7 +81,7 @@ export type PowerPartial<T> = {
   [U in keyof T]?: T[U] extends object
     ? PowerPartial<T[U]>
     : T[U]
-}; // 如果属性值是一个继承于object，进行递归
+}; // 如果属性值是一个继承于object的值，就进行递归
 ```
 
 ### Conditional Types
