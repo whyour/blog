@@ -68,7 +68,7 @@ interface Person {
 type PartialPerson = Partial<Person>;
 
 const hunter: PartialPerson = {
-  name: "hunter";
+  name: "hunter",
   child: {
     name: "whyour"
   }
