@@ -7,7 +7,7 @@ tags: [typescript]
 
 ### Partial
 
-Partial的作用是给某个类型中的属性加上?这个 modifier，也就是将必须的属性转为可选项。在本类型中首先要理解两个关键词：`in`、`keyof`。keyof可以取到一个对象接口的所有key值，返回一个String Literal Types，即字符串字面量类型。
+Partial的作用是给某个类型中的属性加上?这个标识，也就是将必须的属性转为可选项。在本类型中首先要理解两个关键词：`in`、`keyof`。keyof可以取到一个对象接口的所有key值，返回一个String Literal Types，即字符串字面量类型。
 比如:
 ```typescript
 interface Person {
