@@ -54,8 +54,7 @@ apt update
 apt install nginx
 ```
 然后查看nginx版本`nginx -V`，结果如下图：
-![nginx-version](/postImg/nginx-version.jpg)
-
+![nginx-version.jpg](https://i.loli.net/2019/01/05/5c30cee3b9ad9.jpg)
 最后修改nginx配置文件，在443端口server中添加如下内容：
 
 > ssl_ciphers EECDH+CHACHA20:EECDH+CHACHA20-draft:EECDH+ECDSA+AES128:EECDH+aRSA+AES128:RSA+AES128:
@@ -66,9 +65,9 @@ apt install nginx
 另外，chrome要进入`chrome://flags`，搜索tls，选择 enabled(draft23)
 
 开启前截图
-![tls1-2](/postImg/tls1-2.jpg)
+![tls1-2.jpg](https://i.loli.net/2019/01/05/5c30cf15a934d.jpg)
 开启后截图
-![tls1-3](/postImg/tls1-3.jpg)
+![tls1-3.jpg](https://i.loli.net/2019/01/05/5c30cf29c2ad1.jpg)
 
 ### 参考资料
 * [传输层安全性协议](https://zh.wikipedia.org/wiki/%E5%82%B3%E8%BC%B8%E5%B1%A4%E5%AE%89%E5%85%A8%E6%80%A7%E5%8D%94%E5%AE%9A)
