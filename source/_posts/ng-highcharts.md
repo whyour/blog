@@ -60,5 +60,6 @@ import * as Highcharts from 'highcharts';
 ```
 ###运行ng serve
 效果如下图：
-![IMAGE](/postImg/ng6hc.jpg)
+![ng6hc.jpg](https://ws1.sinaimg.cn/large/657e0735ly1fyw7n3nxlej20zf08hgmp.jpg)
+<!-- ![IMAGE](/postImg/ng6hc.jpg) -->
 [demo地址](https://github.com/whyour/ng6hc.git)
