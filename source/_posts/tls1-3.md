@@ -64,6 +64,7 @@ apt install nginx
 
 另外，chrome要进入`chrome://flags`，搜索tls，选择 enabled(draft23)
 
+![FHSUns.png](https://s2.ax1x.com/2019/01/05/FHSUns.png)
 开启前截图
 ![tls1-2.jpg](https://i.loli.net/2019/01/05/5c30cf15a934d.jpg)
 开启后截图
