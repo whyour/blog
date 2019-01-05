@@ -3,12 +3,12 @@ title: angular6中使用highCharts
 date: 2018-05-06 22:17:25
 tags: [angular6,ng6]
 ---
-1.  全局安装angular/cli@next
+###全局安装angular/cli@next
     `npm i -g @angular/cli@next`
-2. 创建新项目
+###创建新项目
     `ng new ng6hc`
-3. 进入ng6hc `cd ng6hc` 执行 `npm i`
-4. 安装highcharts依赖
+###进入ng6hc `cd ng6hc` 执行 `npm i`
+###安装highcharts依赖
     `npm install highcharts-angular`
 Get package from NPM in your Angular app:
 
@@ -58,7 +58,7 @@ import * as Highcharts from 'highcharts';
   style="width: 100%; height: 400px; display: block;"
 ></highcharts-chart>
 ```
-运行ng serve
+###运行ng serve
 效果如下图：
 ![IMAGE](/postImg/ng6hc.jpg)
 [demo地址](https://github.com/whyour/ng6hc.git)

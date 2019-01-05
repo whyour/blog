@@ -25,7 +25,7 @@ tags: ['TLS','TLS1.3']
 * 添加x25519和x448密钥交换协议
 
 > 因为本博使用的是nginx，所以要先把openssl升级到1.1.1，目前的版本是1.1.0，所以只要编译安装openssl就可以，不需要编译nginx，目前chrome支持的是draft23，发文时间截止适用openssl1.1.1 pre2，进入服务器任意目录，执行如下命令
-```
+```bash
 curl https://www.openssl.org/source/old/1.1.1/openssl-1.1.1-pre2.tar.gz
 tar -zxf openssl-1.1.1-pre2.tar.gz
 cd  openssl-1.1.1-pre2
@@ -36,18 +36,20 @@ make install
 如果/usr/local下没有ssl文件夹，要自己新建一个ssl文件夹`mkdir ssl`
 
 查看openssl版本
-```
+
+```bash
 openssl version -a
 ```
 
 `debian`或者`Ubuntu`下安装`nginx`最新`stable`版，要先把`nginx`的包地址
 
-```
+```bash
 deb http://nginx.org/packages/debian/ stretch nginx
 deb-src http://nginx.org/packages/debian/ stretch nginx
 ```
 加入服务器`source.list`,我的是`debian`在`/etc/apt/source.list`，然后执行
-```
+
+```bash
 apt update
 apt install nginx
 ```
@@ -55,12 +57,12 @@ apt install nginx
 ![nginx-version](/postImg/nginx-version.jpg)
 
 最后修改nginx配置文件，在443端口server中添加如下内容：
-```
-ssl_protocols TLSv1.2 TLSv1.3;
 
-ssl_ciphers TLS13-AES-256-GCM-SHA384:TLS13-CHACHA20-POLY1305-SHA256:TLS13-AES-128-GCM-SHA256:TLS13-AES-128-CCM-8-SHA256:TLS13-AES-128-CCM-SHA256:EECDH+CHACHA20:EECDH+CHACHA20-draft:EECDH+ECDSA+AES128:EECDH+aRSA+AES128:RSA+AES128:EECDH+ECDSA+AES256:EECDH+aRSA+AES256:RSA+AES256:EECDH+ECDSA+3DES:EECDH+aRSA+3DES:RSA+3DES:!MD5;
+> ssl_ciphers EECDH+CHACHA20:EECDH+CHACHA20-draft:EECDH+ECDSA+AES128:EECDH+aRSA+AES128:RSA+AES128:
+>             EECDH+ECDSA+AES256:EECDH+aRSA+AES256:RSA+AES256:
+>             EECDH+ECDSA+3DES:EECDH+aRSA+3DES:RSA+3DES:!MD5;
+> ssl_protocols TLSv1.2 TLSv1.3;
 
-```
 另外，chrome要进入`chrome://flags`，搜索tls，选择 enabled(draft23)
 
 开启前截图
