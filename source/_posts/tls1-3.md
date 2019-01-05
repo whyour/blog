@@ -64,11 +64,10 @@ apt install nginx
 
 另外，chrome要进入`chrome://flags`，搜索tls，选择 enabled(draft23)
 
-![FHSUns.png](https://s2.ax1x.com/2019/01/05/FHSUns.png)
 开启前截图
-![tls1-2.jpg](https://i.loli.net/2019/01/05/5c30cf15a934d.jpg)
+![tls1-2.jpg](https://s2.ax1x.com/2019/01/06/FHC540.jpg)
 开启后截图
-![tls1-3.jpg](https://i.loli.net/2019/01/05/5c30cf29c2ad1.jpg)
+![tls1-3.jpg](https://s2.ax1x.com/2019/01/06/FHCoCV.jpg)
 
 ### 参考资料
 * [传输层安全性协议](https://zh.wikipedia.org/wiki/%E5%82%B3%E8%BC%B8%E5%B1%A4%E5%AE%89%E5%85%A8%E6%80%A7%E5%8D%94%E5%AE%9A)
