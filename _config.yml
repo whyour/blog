@@ -195,3 +195,8 @@ markdown:
     permalink: true # If true, creates an anchor tag with a permalink besides the heading.
     permalinkClass: header-anchor # Class used for the permalink anchor tag.
     permalinkSymbol: '' # The symbol used to make the permalink.
+
+math: 
+  engine: 'katex'
+  katex:
+    css: custom_css_source
