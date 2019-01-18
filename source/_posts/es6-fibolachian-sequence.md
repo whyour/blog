@@ -10,7 +10,7 @@ tags: [ES6, Fibonacci]
 首先它是一个数列，在数学上是以递归的方法定义
 - $F_{0}=0$
 - $F_{1}=1$
-- $F_{n}=F_{{n-1}}+F_{{n-2}}（n≧2）$
+- $F_{n}=F_{n-1}+F_{n-2}  (n≧2)$
 
 简单来说，就是第一个和第二个数字是0和1，后面的数字都是前两个数字的和。
 
@@ -23,7 +23,7 @@ tags: [ES6, Fibonacci]
 ```js
 // 第一种
 function fibonacci(n) {
-  if(n===0 || n===1){
+  if (n===0 || n===1) {
     return n;
   }
   return fibonacci(n-1) + fibonacci(n-2);
@@ -46,7 +46,7 @@ fibonacci(50);
 ### es6实现
 
 ```js
-function* fib_generator(){
+function* fib_generator() {
   let [current, next] = [0, 1];
   while(true) {
     yield current;
@@ -111,7 +111,7 @@ console.log(g.next()); // { value: undefined, done: true }
 
 可以得知return方法会返回指定的值并结束生成器。而当生成器函数已经结束的时候，再去调用return方法，则也会返回给定值，并且结束生成器。
 
-```
+```js
 function* gen() {yield 1;}
 var g = gen();
 console.log(g.next()); // { value: 1, done: false }
