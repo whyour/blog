@@ -3,10 +3,14 @@ title: angular6中使用httpInterceptor处理前端请求
 date: 2018-06-15 19:36:34
 tags: ['angular', 'angular6', 'httpInterceptor']
 ---
+在前端项目中，往往在请求服务端的 api 的时候，我们需要做一些跨域、统一前缀、添加 cookie 等 header 信息的处理，这时候，在  angular 中，就用到了 `httpInterceptor`，下面介绍如何在 angular 中使用 httpInterceptor。
 ### 在`angular`项目根目录下创建`service`
 ```bash
 ng g service httpInterceptor
 ```
+
+httpInterceptorService 其实就是一个实现了 angular 中 HttpInterceptor 接口的 service，然后实现接口中的 intercept 方法。
+
 ```typescript
 import { Injectable } from '@angular/core';
 
@@ -18,14 +22,14 @@ export class HttpInterceptorService {
   constructor() { }
 }
 ```
-### 引入@angular/common/http模块
+### 引入@angular/common/http 模块
 ```typescript
 import {
   HttpEvent, HttpInterceptor, HttpHandler,
   HttpRequest, HttpResponse
 } from '@angular/common/http';
 ```
-### 引入rxjs操作符
+### 引入 rxjs 操作符
 ```typescript
 import { Observable } from 'rxjs';
 import { finalize, tap, catchError, map } from 'rxjs/operators';
