@@ -1,5 +1,5 @@
 ---
-title: javascript中的es6技巧
+title: javascript 中的 es6 技巧
 date: 2018-11-11 20:41:31
 tags: ['javascript','es6']
 ---
