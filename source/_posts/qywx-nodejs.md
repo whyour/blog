@@ -73,7 +73,7 @@ npm i sha1 --save
   let aesKey = Buffer.from(EncodingAESKey + '=', 'base64');
 ```
 
-1. 对 AESKey 进行 aes-256-cbc 解密  
+2. 对 AESKey 进行 aes-256-cbc 解密  
 
 ```js
   // 去掉 decipheredBuff 头部的16个随机字节和4个字节的 msg_len，截取 msg_len 长度的部分即为msg，剩下的为尾部的 receiveid
@@ -81,7 +81,7 @@ npm i sha1 --save
   let aesCipher = crypto.createDecipheriv("aes-256-cbc", aesKey, aesKey.slice(0, 16));
   aesCipher.setAutoPadding(false);
   let decipheredBuff = Buffer.concat([aesCipher.update(data, 'base64'), aesCipher.final()]);
-  decipheredBuff = PKCS7Decoder(decipheredBuff); // 微信要求用 pkcs7进行不全
+  decipheredBuff = PKCS7Decoder(decipheredBuff); // 微信要求用 pkcs7进行补全
   const len_netOrder_corpid = decipheredBuff.slice(16);
   const msg_len = len_netOrder_corpid.slice(0, 4).readUInt32BE(0);
   const result = len_netOrder_corpid.slice(4, msg_len + 4).toString();
@@ -96,7 +96,7 @@ function PKCS7Decoder (buff) {
 }
 ```
 
-1. 然后返回 result 即可
+3. 然后返回 result 即可
 
 ```js
   res.end(result);
