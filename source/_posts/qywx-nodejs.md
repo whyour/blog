@@ -81,10 +81,19 @@ npm i sha1 --save
   let aesCipher = crypto.createDecipheriv("aes-256-cbc", aesKey, aesKey.slice(0, 16));
   aesCipher.setAutoPadding(false);
   let decipheredBuff = Buffer.concat([aesCipher.update(data, 'base64'), aesCipher.final()]);
-  decipheredBuff = PKCS7Decoder(decipheredBuff);
+  decipheredBuff = PKCS7Decoder(decipheredBuff); // 微信要求用 pkcs7进行不全
   const len_netOrder_corpid = decipheredBuff.slice(16);
   const msg_len = len_netOrder_corpid.slice(0, 4).readUInt32BE(0);
   const result = len_netOrder_corpid.slice(4, msg_len + 4).toString();
+```
+```js
+function PKCS7Decoder (buff) {
+  var pad = buff[buff.length - 1];
+  if (pad < 1 || pad > 32) {
+    pad = 0;
+  }
+  return buff.slice(0, buff.length - pad);
+}
 ```
 
 1. 然后返回 result 即可
