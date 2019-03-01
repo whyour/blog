@@ -1,5 +1,5 @@
 ---
-title: Angular6组件之间数据通信
+title: Angular6 组件之间数据通信
 date: 2018-11-18 16:27:11
 tags: [angular, component, angular6]
 ---
@@ -52,7 +52,7 @@ export class ChildComponent {
 
 ### Child to Parent via ViewChild
 
-ViewChild允许将一个组件注入另一个组件，使父组件可以访问其属性和功能。但有一点需要注意的是，在视图初始化之后，子组件才可用。这意味着我们需要实现AfterViewInit生命周期钩子来接收来自子组件的数据。
+ViewChild 允许将一个组件注入另一个组件，使父组件可以访问其属性和功能。但有一点需要注意的是，在视图初始化之后，子组件才可用。这意味着我们需要实现 AfterViewInit 生命周期钩子来接收来自子组件的数据。
 
 ```typescript
 // parent.component.ts
