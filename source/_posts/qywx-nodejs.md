@@ -113,7 +113,7 @@ function _decode(data) {
   let len_netOrder_corpid = decipheredBuff.slice(16);
   let msg_len = len_netOrder_corpid.slice(0, 4).readUInt32BE(0);
   const result = len_netOrder_corpid.slice(4, msg_len + 4).toString();
-  return result; // 返回一个解密后的明文
+  return result; // 返回一个解密后的明文-
 }
 ```
 ```js
@@ -231,6 +231,17 @@ app.post('/worktile', function (req, res) {
 
 请求方式：POST（HTTPS）
 请求地址：https://qyapi.weixin.qq.com/cgi-bin/service/getuserdetail3rd?access_token=SUITE_ACCESS_TOKEN
+
+```json
+{
+   "user_ticket": "USER_TICKET"
+}
+```
+
+|参数|必须|说明|
+|--- |--- |--- |
+|access_token|是|第三方应用的 suite_access_token，参见“获取第三方应用凭证”|
+|user_ticket|是|成员票据|
 
 返回结果：
 
