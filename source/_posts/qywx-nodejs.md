@@ -293,5 +293,5 @@ app.post('/worktile', function (req, res) {
 
 ### 九、注意事项
 
-* 本文更新于 2019 年 3 月 6 日，api 可能有时效性，如有差异，以 [官方 api](https://work.weixin.qq.com/api/doc#90001/90142/90594) 为准。
+* api 可能有时效性，如有差异，以 [官方 api](https://work.weixin.qq.com/api/doc#90001/90142/90594) 为准。
 * [完整 demo](https://raw.githubusercontent.com/whyour/yiyanApi/master/server.js)
