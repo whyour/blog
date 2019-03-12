@@ -15,7 +15,7 @@ tags: [nodejs]
 
 在创建应用之前，首先要配置好通用开发参数
 
-![20190225115855.png](https://i.loli.net/2019/02/25/5c73680394fae.png)
+![20190312111602.png](https://i.loli.net/2019/03/12/5c872475119ab.png)
 
 在填写系统事件接收 url 时，要正确响应企业微信验证 url 的请求。这个可以参考企业微信后台，自建应用的接收消息的 api 设置。
 在企业的管理端后台，进入需要设置接收消息的目标应用，点击“接收消息”的“设置API接收”按钮，进入配置页面。
@@ -94,14 +94,14 @@ function checkSignature(req, res, encrypt) {
 
 密文解密过程：
 
-1. 对刚才生成的 AESKey 进行 base64 解码
+###### 2.1.2.1 对刚才生成的 AESKey 进行 base64 解码
 
 ```js
 const EncodingAESKey = '21IpFqj8qolJbaqPqe1rVTAK5sgkaQ3GQmUKiUQLwRe';
 let aesKey = Buffer.from(EncodingAESKey + '=', 'base64');
 ```
 
-2. 对 AESKey 进行 aes-256-cbc 解密  
+###### 2.1.2.2 对 AESKey 进行 aes-256-cbc 解密  
 
 ```js
 function _decode(data) {
@@ -126,7 +126,7 @@ function PKCS7Decoder (buff) {
 }
 ```
 
-3. 然后返回 result 即可
+###### 2.1.2.3 然后返回 result 即可
 
 ```js
 res.end(result);
@@ -144,7 +144,7 @@ res.end(result);
 
 应用创建成功后，服务商可以授权 10 个测试企业
 
-![20190225143525.png](https://i.loli.net/2019/02/25/5c738cb169625.png)
+![20190312111713.png](https://i.loli.net/2019/03/12/5c8724bb14970.png)
 
 从企业微信应用市场发起授权时，企业微信给刚才应用设置的`指令回调 url` 发送一个 post 请求，比如：
 `https://api.worktile.com/worktile?msg_signature=b99605616153ffbfbe6ebbb500bd211e67ed714d&timestamp=1551076894&nonce=1551709703`，直接返回成功即可。
