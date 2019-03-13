@@ -4,7 +4,7 @@ date: 2019-02-25 10:59:16
 tags: [nodejs]
 ---
 
-最近公司要开发企业微信端的 worktile，以前做的是企业微信内部应用，由于开发的是企业内部应用，所有只适用于私有部署客户，对于公有云客户就无法使用，所有就准备开发企业微信的第三方应用，本文主要介绍在调研阶段遇到的山珍海味。
+最近公司要开发企业微信端的 Worktile，以前做的是企业微信内部应用，所以只适用于私有部署客户，而对于公有云客户就无法使用，所有就准备开发企业微信的第三方应用，本文主要介绍在调研阶段遇到的山珍海味。
 
 开发之前你需要前注册为第三方服务商，然后用第三方服务商的账号创建应用，创建之后只需要管理员授权应用，第三方服务商即可为用户提供服务。
 
@@ -41,11 +41,11 @@ tags: [nodejs]
 | msg_signature  | 企业微信加密签名，msg_signature 结合了企业填写的 token、请求中的 timestamp、nonce 参数、加密的消息体 |
 | timestamp  | 时间戳 |
 | nonce | 随机数 |
-| echostr | 加密的字符串。需要解密得到消息内容明文，解密后有random、msg_len、msg、receiveid 四个字段，其中 msg 即为消息内容明文  |
+| echostr | 加密的字符串。需要解密得到消息内容明文，解密后有 random、msg_len、msg、receiveid 四个字段，其中 msg 即为消息内容明文  |
 
 ##### 2.1.1 通过参数 msg_signature 对请求进行校验
 
-首先要把刚才配置时随机生成的 token, timestamp, nonce, msg_encrypt 进行 sha1 加密，这里我们可以直接使用 npm 模块 [sha1](https://www.npmjs.com/package/sha1) 进行加密，然后判断得到的 str 是否和 msg_signature 相等。
+首先要把刚才配置时随机生成的 token, timestamp, nonce, msg_encrypt 进行 sha1 加密，这里我们使用 crypto 创建，也可以直接使用 npm 模块 [sha1](https://www.npmjs.com/package/sha1) 进行加密，然后判断得到的 str 是否和 msg_signature 相等。
 
 ```js
 function sha1(str) {
@@ -72,7 +72,7 @@ function checkSignature(req, res, encrypt) {
   console.log('timestamp: ', timestamp);
   console.log('nonce: ', nonce);
   console.log('signature: ', signature);
-  // 将 token/timestamp/nonce 三个参数进行字典序排序
+  // 将 token/timestamp/nonce/echostr 四个参数组成数组进行排序
   const tmpArr = [token, timestamp, nonce, echostr];
   const tmpStr = sha1(tmpArr.sort().join(''));
   console.log('Sha1 String: ', tmpStr);
@@ -97,7 +97,7 @@ function checkSignature(req, res, encrypt) {
 ###### 2.1.2.1 对刚才生成的 AESKey 进行 base64 解码
 
 ```js
-const EncodingAESKey = '21IpFqj8qolJbaqPqe1rVTAK5sgkaQ3GQmUKiUQLwRe';
+const EncodingAESKey = '21IpFqj8qolJbaqPqe1rVTAK5sgkaQ3sswemUKiUQLwRe';
 let aesKey = Buffer.from(EncodingAESKey + '=', 'base64');
 ```
 
@@ -105,7 +105,7 @@ let aesKey = Buffer.from(EncodingAESKey + '=', 'base64');
 
 ```js
 function _decode(data) {
-  let aesKey = Buffer.from('21IpFqj8qolJbaqPqe1rVTAK5sgkaQ3GQmUKiUQLwRe' + '=', 'base64');
+  let aesKey = Buffer.from('21IpFqj8qolJbaqPqe1rVTAK5sgkaQ3sswemUKiUQLwRe' + '=', 'base64');
   let aesCipher = crypto.createDecipheriv("aes-256-cbc", aesKey, aesKey.slice(0, 16));
   aesCipher.setAutoPadding(false);
   let decipheredBuff = Buffer.concat([aesCipher.update(data, 'base64'), aesCipher.final()]);
@@ -113,7 +113,7 @@ function _decode(data) {
   let len_netOrder_corpid = decipheredBuff.slice(16);
   let msg_len = len_netOrder_corpid.slice(0, 4).readUInt32BE(0);
   const result = len_netOrder_corpid.slice(4, msg_len + 4).toString();
-  return result; // 返回一个解密后的明文-
+  return result; // 返回一个解密后的明文
 }
 ```
 ```js
