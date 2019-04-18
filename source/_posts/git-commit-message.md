@@ -153,6 +153,7 @@ Closes #234, #123, #567
 ### How to use
 
 [Commitizen](https://github.com/commitizen/cz-cli)是一个可视化撰写 commit message 的工具。
+
 [Validate-commit-msg](https://github.com/angular/angular/blob/master/tools/validate-commit-message/validate-commit-message.js) 用于检查 Node 项目的 Commit message 是否符合格式。
 
 ### Examples
