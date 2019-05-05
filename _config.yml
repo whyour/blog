@@ -107,10 +107,10 @@ skip_render:
 
 deploy:
   type: rsync
-  host: 23.83.242.217
+  host: 1.1.1.1
   user: root
-  root: /usr/share/nginx/ninesix.cc
-  port: 26305
+  root: /blog
+  port: 11
   # type: git
   # repo: https://git.coding.net/w-nba/w-nba.coding.me.git
   # branch: master
