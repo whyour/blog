@@ -5,6 +5,8 @@ tags: [javascript, Math, Truncation]
 ---
 在 JavaScript 中，我们常常会有对数字或者数字字符串的取整需求，要么向上取整`Math.ceil(number)`，要么向下取整` Math.floor(number)`，还有一种情况就是`parseInt`，`parseInt`是当数字大于 0 时，向下取整，小于 0 时，向上取整。但是在 es6 中我们有了新的方法`Math.trunc(number)`。
 
+### es5 和 es6 取整操作
+
 ```js
 const number = 80.6
 // Old Way
