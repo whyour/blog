@@ -9,7 +9,11 @@ tags: [angular, environment]
 
 比如：
 
+### environments
+
 ![20190626144925.png](https://i.loli.net/2019/06/26/5d1315767c3a241215.png)
+
+### angular.json
 
 但是问题是，当我们只是开发环境启动时，这个时候我们想要的是，我们传入的环境变量的配置文件应该 merge 默认的配置文件，但是，angular 目前不是 merge， 只有一种替换文件的方式。重点就在 `angular.json`这个文件中。
 
