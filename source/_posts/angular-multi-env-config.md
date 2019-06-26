@@ -166,3 +166,26 @@ export const environment = {
 
 这里要注意的就是 angular 启动文件中，会验证环境变量，所以配置文件中必须有 `environment`。
 最后我们在启动的时候要使用 `ng serve --configuration=${env}`, `${env}` 就是你的环境变零名称。这样你就可以完美完成多环境变量加载开发了。 
+另外，我们在 ng serve 后面的配置也可以放在 angular.json 中。比如：
+
+```json
+"serve": {
+  "builder": "@angular-devbuild-angular:dev-server",
+  "options": {
+    "browserTarget": "admin:build",
+    "port": 10001,
+    "disableHostCheck": true
+  },
+  "configurations": {
+    "production": {
+      "browserTarget": "admin:build:production"
+    }
+  }
+}
+```
+
+所有 ng serve 支持的参数都可以写在 options 中。
+
+### reference
+
+[ng serve](https://angular.io/cli/serve)
