@@ -1,5 +1,5 @@
 ---
-title: angular-flexbox-and-grid
+title: angular 组件使用 Flexbox 和 Grid 布局
 date: 2019-09-03 22:24:40
 tags: [angular, flex, grid]
 ---
