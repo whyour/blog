@@ -1,6 +1,6 @@
 # blog
 blog back up
-https://ninesix.cc
+https://whyour.cn
 
 
 # tip

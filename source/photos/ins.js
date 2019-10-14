@@ -118,8 +118,8 @@
         for (var i = 0, len = data.link.length; i < len; i++) {
           // var minSrc = 'http://p6pqytu6y.bkt.clouddn.com/min_photos/' + data.link[i];
           // var src = 'http://p6pqytu6y.bkt.clouddn.com/photos/' + data.link[i];
-          var minSrc = '//ninesix.cc/sheying/min_photos/' + data.link[i];
-          var src = '//ninesix.cc/sheying/photos/' + data.link[i];
+          var minSrc = '//whyour.cn/sheying/min_photos/' + data.link[i];
+          var src = '//whyour.cn/sheying/photos/' + data.link[i];
           var type = data.type[i];
           var target = src + (type === 'video' ? '.mp4' : '.jpg');
           src += '';
