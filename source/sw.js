@@ -1,4 +1,4 @@
-importScripts('./workbox-sw.js');
+// importScripts('./workbox-sw.js');
 
 if (workbox) {
   console.log(`Yay! Workbox is loaded 🎉`);
