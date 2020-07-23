@@ -29,9 +29,6 @@ foo === "bar"; // true
 
 等等！
 
-When you assign the value bar to the constant foo, it is of the primitive type string. That’s acceptable for everyone. But how can you access the property length of a primitive string?
-Weird? Nah.
-
 当你把字符串bar赋值给常量foo时，foo是基本字符串类型。这是每个人都可以接受的。但是为什么可以访问字符串类型的length属性呢？
 
 是不是很奇怪。
