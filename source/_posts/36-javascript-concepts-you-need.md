@@ -357,5 +357,6 @@ ES2020发布了几个新特性，包括可选链接、nullish合并、动态导�
 
 ## 资源
 
+[原文链接](https://medium.com/better-programming/36-javascript-concepts-you-need-to-master-to-become-an-expert-c6630ac41bf4)
 [Stephen Curtis的文章](https://medium.com/@stephenthecurt/33-fundamentals-every-javascript-developer-should-know-13dd720a90d1)
 [Leonardo Maldonado的github仓储](https://github.com/leonardomso/33-js-concepts)
