@@ -1,6 +1,3 @@
-[submodule "themes/indyou"]
-	path = themes/indyou
-	url = git@github.com:whyour/hexo-theme-indyou.git
 [submodule "themes/yilia"]
 	path = themes/yilia
 	url = git@github.com:whyour/hexo-theme-yilia.git
