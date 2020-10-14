@@ -27,10 +27,15 @@ jobs:
       - run: npm install
       - run: npm run hook
         
-      - name: publish:starters
-        uses: johno/actions-push-subdirectories@master
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          args: public whyour
+      - name: copy to static repo
+        env: 
+          # Github 仓库
+          GITHUB_REPO: github.com/whyour/blog-static
+        # 将编译后的博客文件推送到指定仓库
+        run: |
+          cd ./public && git init && git add .
+          git config user.name "whyour"
+          git config user.email "imwhyour@gmail.com"
+          git add .
+          git commit -m "copy blog at $(date +'%Y-%m-%d %H:%M:%S')"
+          git push --force --quiet "https://${{ secrets.GITHUB_TOKEN }}@$GITHUB_REPO" main:main
