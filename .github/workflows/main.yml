@@ -32,7 +32,7 @@ jobs:
       - name: copy to static repo
         env: 
           # Github 仓库
-          GITHUB_REPO: github.com/whyour/blog-static
+          GITHUB_REPO: gitee.com/whyour/blog-static
         # 将编译后的博客文件推送到指定仓库
         run: |
           cd ./public && git init && git add .
