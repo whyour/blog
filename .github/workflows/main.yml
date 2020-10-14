@@ -21,11 +21,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        with:
+        submodules: true 
       - uses: actions/setup-node@v1
         with:
           node-version: '10'
-      - run: git submodule update --init
-      - run: git submodule update --remote
       - run: npm install
       - run: npm run hook
         
