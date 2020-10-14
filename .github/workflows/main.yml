@@ -25,7 +25,7 @@ jobs:
         with:
           node-version: '12'
       - run: npm install
-      - run: npm hexo
+      - run: npm run hexo
         
       - name: Pushes to another repository
         uses: cpina/github-action-push-to-another-repository@master
