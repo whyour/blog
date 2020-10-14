@@ -24,9 +24,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '10'
-      - run: |
-        git submodule update --init
-        git submodule update --remote
+      - run: git submodule update --init
+      - run: git submodule update --remote
       - run: npm install
       - run: npm run hook
         
