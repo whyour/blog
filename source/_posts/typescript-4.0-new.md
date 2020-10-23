@@ -6,6 +6,8 @@ tags: [typescript]
 
 8月6日，微软发布了[TypeScript 4.0](https://devblogs.microsoft.com/typescript/announcing-typescript-4-0-rc)的rc版。此版本带来了[元组元素类型标记](https://devblogs.microsoft.com/typescript/announcing-typescript-4-0-rc/#labeled-tuple-elements)，这就是我在本文标题中所提到的期待的内容。
 
+<!-- more -->
+
 ![1](https://image.whyour.cn/others/1.png)
 
 ### 带有未知参数的泛型接口
