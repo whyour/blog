@@ -26,8 +26,17 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '10'
-      - run: npm install
-      - run: npm run hook
+      - name: build yilia
+        run: |
+          cd ./themes/yilia
+          npm install
+          npm run dist
+          cd ../../
+      
+      - name: build website
+        run: |
+          npm install
+          npm run hook
         
       - name: copy to static repo
         env: 
