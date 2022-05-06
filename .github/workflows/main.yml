@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: build static
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -20,23 +20,22 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           submodules: true 
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '10'
+      - uses: actions/setup-node@v3
       - name: build yilia
         run: |
+          npm i -g pnpm
           cd ./themes/yilia
-          npm install
-          npm run dist
+          pnpm install
+          pnpm run dist
           cd ../../
       
       - name: build website
         run: |
-          npm install
-          npm run hook
+          pnpm install
+          pnpm run hook
         
       - name: copy to static repo
         env: 
